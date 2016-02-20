@@ -41,6 +41,6 @@ public interface IGamepad {
 		}
 	}
 	
-	public double getAxis(GamepadAxis axis);
-	public boolean getButton(GamepadButton button);
+	double getAxis(GamepadAxis axis);
+	boolean getButton(GamepadButton button);
 }

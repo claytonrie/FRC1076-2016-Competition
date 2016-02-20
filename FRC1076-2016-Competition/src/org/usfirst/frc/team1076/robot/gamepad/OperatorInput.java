@@ -3,7 +3,6 @@ package org.usfirst.frc.team1076.robot.gamepad;
 import org.usfirst.frc.team1076.robot.gamepad.IGamepad.GamepadAxis;
 
 public class OperatorInput implements IInput {
-
 	IGamepad gamepad;
 	
 	public OperatorInput(IGamepad gamepad) {
