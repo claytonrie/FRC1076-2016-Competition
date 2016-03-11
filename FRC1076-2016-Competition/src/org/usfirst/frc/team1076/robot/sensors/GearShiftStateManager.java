@@ -1,10 +1,22 @@
 package org.usfirst.frc.team1076.robot.sensors;
 
 import org.usfirst.frc.team1076.robot.IRobot;
+import org.usfirst.frc.team1076.robot.IRobot.SolenoidValue;
 import org.usfirst.frc.team1076.robot.gamepad.IDriverInput.MotorOutput;
 
 public abstract class GearShiftStateManager {
-	public enum GearStates { High, Low; }
+	public enum GearStates { 
+		High(SolenoidValue.Forward), 
+		Low(SolenoidValue.Reverse);
+		
+		SolenoidValue value;
+		GearStates(SolenoidValue corresondingVal) {
+			value = corresondingVal;
+		}
+		public SolenoidValue getValue() {
+			return value;
+		}
+	}
 	private double shiftUpSpeed = 1;
 	private double shiftDownSpeed = 0;
 

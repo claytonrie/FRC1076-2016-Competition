@@ -43,20 +43,13 @@ public class Channel implements IChannel {
 					}
 					String data = new String(receivePacket.getData());
 					data = data.substring(0, receivePacket.getLength());
+					System.out.println(data);
 					containerChannel.putMessage(new UDPMessage(data, receivePacket.getAddress()));
 				}
 				serverSocket.close();
 			}
 		}.init(this));
 		this.receiveWorker.start();
-	}
-	
-	protected boolean getReceiveStatus() {
-		return doesReceive;
-	}
-	
-	public void setReceiveStatus(boolean receive) {
-		doesReceive = receive;
 	}
 	
 	@Override
@@ -84,4 +77,7 @@ public class Channel implements IChannel {
 	public void close() {
 		receiveWorker.interrupt();
 	}
+	
+	protected boolean getReceiveStatus() { return doesReceive; }
+	public void setReceiveStatus(boolean receive) { doesReceive = receive; }
 }

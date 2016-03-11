@@ -3,7 +3,6 @@ package org.usfirst.frc.team1076.test.mock;
 import org.usfirst.frc.team1076.robot.IRobot;
 import org.usfirst.frc.team1076.robot.IRobot.SolenoidValue;
 import org.usfirst.frc.team1076.robot.sensors.GearShiftStateManager;
-import org.usfirst.frc.team1076.robot.sensors.GearShiftStateManager.GearStates;
 
 public class MockGearShifter extends GearShiftStateManager {
 	public MockGearShifter(double upShift, double downShift) {

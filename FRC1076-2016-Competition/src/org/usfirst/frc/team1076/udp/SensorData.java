@@ -7,6 +7,7 @@ import org.usfirst.frc.team1076.robot.sensors.IGyro;
 
 public class SensorData implements ISensorData {
 	public enum FieldPosition { Right, Left; }
+	
 	private IChannel receiver;
 	private double visionHeading, visionRange;
 	private double lidarHeading, lidarRange;
@@ -28,6 +29,7 @@ public class SensorData implements ISensorData {
 	public void interpretData() {
 		while (receiver.hasMessage()) {
 			UDPMessage latest = receiver.popLatestMessage();
+			System.out.println(latest.getMessage());
 			JSONObject obj;
 			try {
 				obj = (JSONObject) parser.parse(latest.getMessage());
